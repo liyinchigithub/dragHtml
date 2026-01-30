@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>第3.8节：犬粮与营养基础</title>
+    <style>
+        :root {
+            --primary: #2F80ED;
+            --primary-2: #1A73E8;
+            --bg: #F6F7FB;
+            --text: #1F2D3D;
+            --muted: #90A4AE;
+            --card: #FFFFFF;
+            --shadow: 0 6px 16px rgba(23, 43, 77, .08);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif
+        }
+
+        .page {
+            max-width: 420px;
+            margin: 0 auto;
+            padding-bottom: 20px
+        }
+
+        .hero {
+            background: linear-gradient(180deg, var(--primary) 0%, var(--primary-2) 100%);
+            color: #fff;
+            padding: 22px 20px 14px;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            box-shadow: 0 10px 24px rgba(49, 109, 255, .28);
+            position: relative
+        }
+
+        .crumb {
+            display: inline-block;
+            background: rgba(255, 255, 255, .18);
+            color: #EAF2FF;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 999px
+        }
+
+        .hero h1 {
+            margin: 10px 0 4px;
+            font-size: 22px;
+            line-height: 1.35
+        }
+
+        .sub {
+            font-size: 12px;
+            opacity: .95
+        }
+
+        .illustration {
+            margin-top: 12px;
+            background: #fff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 140px;
+            box-shadow: var(--shadow)
+        }
+
+        .emoji-hero {
+            font-size: 64px
+        }
+
+        .emoji-hand {
+            font-size: 26px;
+            margin-left: 12px
+        }
+
+        .section {
+            margin: 16px 16px 0
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            font-size: 15px;
+            color: #263238;
+            margin-bottom: 10px
+        }
+
+        .section-title::before {
+            content: "丨";
+            color: #263238;
+            font-weight: 700;
+            margin-right: 6px
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 14px;
+            min-height: 80px
+        }
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .item {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start
+        }
+
+        .icon {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            flex-shrink: 0
+        }
+
+        .ok {
+            background: #E9F7EF;
+            color: #25B864
+        }
+
+        .warn {
+            background: #FFF2F2;
+            color: #F04D4D
+        }
+
+        .info {
+            background: #E8F2FF;
+            color: #1A73E8
+        }
+
+        .text {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #34495E
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px
+        }
+
+        .badge {
+            background: #FFF6F6;
+            border-radius: 12px;
+            padding: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(229, 57, 53, .08);
+            min-height: 80px
+        }
+
+        .badge .emoji {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: #FFE1E1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0
+        }
+
+        .label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #C62828
+        }
+
+        .desc {
+            font-size: 12px;
+            color: #8E0000;
+            margin-top: 2px
+        }
+
+        .tip {
+            background: #F8FAFF;
+            border-radius: 12px;
+            padding: 12px
+        }
+
+        .tip .row {
+            display: flex;
+            gap: 8px;
+            align-items: flex-start
+        }
+
+        .tip .bullet {
+            color: #1A73E8
+        }
+
+        .banner {
+            background: #316DFF;
+            color: #fff;
+            border-radius: 12px;
+            padding: 20px 16px;
+            text-align: center;
+            margin: 16px;
+            box-shadow: 0 10px 20px rgba(49, 109, 255, .24)
+        }
+
+        .quote {
+            font-size: 18px;
+            font-weight: 700
+        }
+
+        .footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: 12px;
+            margin: 4px 0 0
+        }
+
+        .edit-toggle {
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            background: #fff;
+            color: #1A73E8;
+            border: none;
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 12px;
+            box-shadow: var(--shadow);
+            cursor: pointer
+        }
+
+        [data-editing="true"] .edit-toggle {
+            background: #E6F0FF;
+            color: #245BDB
+        }
+
+        [data-editing="true"] [contenteditable="true"] {
+            outline: 1px dashed #1A73E8;
+            background: #F2F7FF
+        }
+
+        [data-editing="true"] .dragging {
+            opacity: .6
+        }
+
+        [data-editing="true"] .resizable {
+            outline: 1px dashed #7AA2FF;
+            position: relative
+        }
+
+        .resize-handle {
+            position: absolute;
+            right: 6px;
+            bottom: 6px;
+            width: 12px;
+            height: 12px;
+            background: #1A73E8;
+            border-radius: 3px;
+            box-shadow: 0 2px 6px rgba(26, 115, 232, .3);
+            cursor: nwse-resize
+        }
+
+        [data-resizing="true"] {
+            user-select: none
+        }
+
+        .illustration img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block
+        }
+
+        .emoji-img {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            object-fit: cover;
+            display: block
+        }
+
+        [data-editing="true"] .drop-target {
+            outline: 2px solid #1A73E8
+        }
+
+        .img-box {
+            display: inline-block;
+            position: relative;
+            max-width: 100%;
+            max-height: 100%
+        }
+
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block
+        }
+
+        .style-panel {
+            position: fixed;
+            right: 12px;
+            bottom: 12px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 8px 10px;
+            display: none;
+            gap: 8px;
+            align-items: center;
+            z-index: 9999
+        }
+
+        .style-panel input[type="color"] {
+            width: 24px;
+            height: 24px;
+            border: none;
+            background: transparent;
+            padding: 0
+        }
+
+        .style-panel .btn-reset {
+            background: #F5F7FF;
+            border: none;
+            border-radius: 8px;
+            padding: 4px 8px;
+            color: #1A73E8;
+            cursor: pointer
+        }
+
+        .del-handle {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            text-align: center;
+            background: #F44336;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px rgba(244, 67, 54, .3);
+            cursor: pointer;
+            display: none;
+            font-weight: 700
+        }
+
+        [data-editing="true"] .del-handle {
+            display: block
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page" data-editing="false">
+        <header class="hero">
+            <div class="crumb">营养学 · 宠物基础</div>
+            <button class="edit-toggle" type="button" aria-pressed="false">编辑模式</button>
+            <h1>第3.8节：犬粮与营养基础</h1>
+            <div class="sub">卡片 3.8.1 请牢记的开篇“关”</div>
+            <div class="illustration">
+                <div class="emoji-hero">🐶</div>
+                <div class="emoji-hand">🤝</div>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="section-title">核心内容</div>
+            <div class="card list">
+                <div class="item">
+                    <div class="icon ok">✓</div>
+                    <div class="text">主食犬粮应以完整、均衡营养为原则，按体重与活动量设定每日摄入。</div>
+                </div>
+                <div class="item">
+                    <div class="icon ok">✓</div>
+                    <div class="text">更换粮食需<b>7–10 天</b>逐步过渡；突然更换可能引起肠胃不适。</div>
+                </div>
+                <div class="item">
+                    <div class="icon warn">!</div>
+                    <div class="text">餐后避免立刻剧烈运动，至少休息 <b>30–60 分钟</b>，降低胃扭转与呕吐风险。</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">怎么做 · 关键原则</div>
+            <div class="card list">
+                <div class="item">
+                    <div class="icon info">i</div>
+                    <div class="text">控量不乱喂：零食占比不超过总热量的 <b>10%</b>，优先训练奖励而非随意加餐。</div>
+                </div>
+                <div class="item">
+                    <div class="icon info">i</div>
+                    <div class="text">固定餐标与时段：每日 <b>2–3 次</b>，定点定量，记录排便与精神状态。</div>
+                </div>
+                <div class="item">
+                    <div class="icon info">i</div>
+                    <div class="text">饮水充足与清洁：常备新鲜水源，餐具每日清洗与消毒。</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">过敏食物清单</div>
+            <div class="card">
+                <div class="grid">
+                    <div class="badge">
+                        <div class="emoji">🍫</div>
+                        <div>
+                            <div class="label">巧克力 / 咖啡因</div>
+                            <div class="desc">心率异常、中毒</div>
+                        </div>
+                    </div>
+                    <div class="badge">
+                        <div class="emoji">🍇</div>
+                        <div>
+                            <div class="label">葡萄 / 葡萄干</div>
+                            <div class="desc">急性肾损伤</div>
+                        </div>
+                    </div>
+                    <div class="badge">
+                        <div class="emoji">🍬</div>
+                        <div>
+                            <div class="label">木糖醇</div>
+                            <div class="desc">低血糖、肝损伤</div>
+                        </div>
+                    </div>
+                    <div class="badge">
+                        <div class="emoji">🧅</div>
+                        <div>
+                            <div class="label">洋葱 / 大葱 / 蒜</div>
+                            <div class="desc">溶血性贫血</div>
+                        </div>
+                    </div>
+                    <div class="badge">
+                        <div class="emoji">🥑</div>
+                        <div>
+                            <div class="label">牛油果</div>
+                            <div class="desc">消化不良、呕吐</div>
+                        </div>
+                    </div>
+                    <div class="badge">
+                        <div class="emoji">🍷</div>
+                        <div>
+                            <div class="label">酒精</div>
+                            <div class="desc">中枢抑制、中毒</div>
+                        </div>
+                    </div>
+                    <div class="badge">
+                        <div class="emoji">🍖</div>
+                        <div>
+                            <div class="label">熟骨头</div>
+                            <div class="desc">碎裂划伤肠道</div>
+                        </div>
+                    </div>
+                    <div class="badge">
+                        <div class="emoji">🥩</div>
+                        <div>
+                            <div class="label">生肉 / 生蛋</div>
+                            <div class="desc">细菌与寄生虫风险</div>
+                        </div>
+                    </div>
+                    <div class="badge">
+                        <div class="emoji">🧂</div>
+                        <div>
+                            <div class="label">高盐食物</div>
+                            <div class="desc">电解质失衡</div>
+                        </div>
+                    </div>
+                    <div class="badge">
+                        <div class="emoji">🥫</div>
+                        <div>
+                            <div class="label">霉变/过期食品</div>
+                            <div class="desc">毒素摄入</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">服务中的喂食规范</div>
+            <div class="tip list">
+                <div class="row">
+                    <div class="bullet">🔹</div>
+                    <div class="text">征得主人同意并留痕，详细说明喂食计划与注意点。</div>
+                </div>
+                <div class="row">
+                    <div class="bullet">🔹</div>
+                    <div class="text">风险与安全第一：仅用犬只自带或主人认可的食物，出现异常立刻联系主人与医生。</div>
+                </div>
+                <div class="row">
+                    <div class="bullet">🔹</div>
+                    <div class="text">有目的的奖励：以训练为主（坐、卧、等待），不在犬只过度兴奋时喂食。</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="banner">
+            <div class="quote">“零食不乱喂，饭后不暴跑。”</div>
+        </div>
+
+        <div class="footer">上主食 · 喝清水 · 适量运动</div>
+    </div>
+    <script>
+        (() => {
+            const page = document.querySelector('.page');
+            const STORAGE_KEY = 'page_snapshot_v1';
+            const snapshot = localStorage.getItem(STORAGE_KEY);// 从本地存储获取页面快照
+            if (snapshot) page.innerHTML = snapshot;
+            const btn = page.querySelector('.edit-toggle');
+            let editing = false; let activeEl = null; let stylePanel = null;
+            const editableSelectors = ['.crumb', '.hero h1', '.sub', '.section-title', '.text', '.label', '.desc', '.quote', '.footer'];
+            const dragSets = [
+                { containerSelector: '.page', itemSelector: '.section' },
+                { containerSelector: '.list', itemSelector: '.item' },
+                { containerSelector: '.grid', itemSelector: '.badge' }
+            ];
+            function setContentEditable(on) {
+                document.querySelectorAll(editableSelectors.join(',')).forEach(el => el.contentEditable = on);
+            }
+            function setDraggable(on) {
+                dragSets.forEach(({ itemSelector }) => {
+                    document.querySelectorAll(itemSelector).forEach(el => el.draggable = on);
+                });
+            }
+            function enableDrag({ containerSelector, itemSelector }) {
+                document.querySelectorAll(containerSelector).forEach(container => {
+                    container.addEventListener('dragover', e => {
+                        if (page.dataset.editing !== 'true') return;
+                        e.preventDefault();
+                        const dragging = container.querySelector('.dragging');
+                        if (!dragging) return;
+                        const after = getAfter(container, itemSelector, e.clientY);
+                        if (after == null) container.appendChild(dragging);
+                        else container.insertBefore(dragging, after);
+                    });
+                });
+                document.querySelectorAll(itemSelector).forEach(item => {
+                    item.addEventListener('dragstart', e => {
+                        if (page.dataset.editing !== 'true') { e.preventDefault(); return; }
+                        item.classList.add('dragging');
+                        e.dataTransfer.effectAllowed = 'move';
+                        e.dataTransfer.setData('text/plain', '');
+                    });
+                    item.addEventListener('dragend', () => item.classList.remove('dragging'));
+                });
+                function getAfter(container, selector, y) {
+                    const els = [...container.querySelectorAll(`${selector}:not(.dragging)`)];
+                    let closest = { offset: Number.NEGATIVE_INFINITY, element: null };
+                    els.forEach(child => {
+                        const box = child.getBoundingClientRect();
+                        const offset = y - box.top - box.height / 2;
+                        if (offset < 0 && offset > closest.offset) closest = { offset, element: child };
+                    });
+                    return closest.element;
+                }
+            }
+            dragSets.forEach(enableDrag);
+            initStylePanel();
+            function initStylePanel() {
+                stylePanel = document.createElement('div');
+                stylePanel.className = 'style-panel';
+                stylePanel.innerHTML = '<span>字色</span><input type="color" class="color-fg"><span>背景</span><input type="color" class="color-bg"><span>字号</span><input type="number" class="font-size" min="10" max="72" step="1"><button type="button" class="btn-reset">重置</button><button type="button" class="btn-del">删除</button>';
+                document.body.appendChild(stylePanel);
+                const fg = stylePanel.querySelector('.color-fg');
+                const bg = stylePanel.querySelector('.color-bg');
+                const size = stylePanel.querySelector('.font-size');
+                const reset = stylePanel.querySelector('.btn-reset');
+                const del = stylePanel.querySelector('.btn-del');
+                fg.addEventListener('input', () => { if (activeEl) activeEl.style.color = fg.value; });
+                bg.addEventListener('input', () => { if (activeEl) activeEl.style.backgroundColor = bg.value; });
+                size.addEventListener('input', () => { if (activeEl && size.value) activeEl.style.fontSize = Number(size.value) + 'px'; });
+                reset.addEventListener('click', () => { if (activeEl) { activeEl.style.removeProperty('color'); activeEl.style.removeProperty('background-color'); activeEl.style.removeProperty('font-size'); } });
+                del.addEventListener('click', () => {
+                    if (!activeEl) return;
+                    const box = activeEl.classList.contains('img-box') ? activeEl : activeEl.closest('.img-box');
+                    const el = box || activeEl;
+                    if (el === page || el.contains(stylePanel) || el.classList.contains('edit-toggle')) return;
+                    el.remove();
+                    activeEl = null;
+                });
+                page.addEventListener('click', (e) => {
+                    if (page.dataset.editing !== 'true') return;
+                    const target = e.target.closest('[contenteditable="true"], .label, .desc, .section-title, .text, .quote, .footer, .crumb, h1, h2, h3, .section, .item, .badge, .card, .illustration, .banner, img, .img-box');
+                    if (target) {
+                        activeEl = target.tagName === 'IMG' ? (target.closest('.img-box') || target) : target;
+                        const cs = getComputedStyle(activeEl);
+                        fg.value = toHex(cs.color);
+                        bg.value = toHex(cs.backgroundColor);
+                        const fs = parseFloat(cs.fontSize);
+                        if (Number.isFinite(fs)) size.value = Math.round(fs);
+                    }
+                });
+            }
+            function toHex(c) {
+                if (/^#/.test(c)) return c; const m = c.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/); if (!m) return '#000000';
+                return '#' + [1, 2, 3].map(i => Number(m[i]).toString(16).padStart(2, '0')).join('');
+            }
+            function setResizable(on) {
+                const staticTargets = document.querySelectorAll('.illustration, .card, .badge, .banner');
+                const editableTargets = document.querySelectorAll('[contenteditable="true"]');
+                const imageTargets = document.querySelectorAll('img');
+                const targets = new Set();
+                staticTargets.forEach(t => targets.add(t));
+                editableTargets.forEach(t => targets.add(t));
+                imageTargets.forEach(t => targets.add(t));
+                targets.forEach(el => {
+                    if (on) {
+                        const target = el.tagName === 'IMG' ? wrapImg(el) : el;
+                        makeResizable(target);
+                    } else {
+                        teardownResizable(el.tagName === 'IMG' && el.parentElement?.classList.contains('img-box') ? el.parentElement : el);
+                    }
+                });
+            }
+            function wrapImg(img) {
+                if (img.parentElement && img.parentElement.classList.contains('img-box')) return img.parentElement;
+                const box = document.createElement('div');
+                box.className = 'img-box';
+                const r = img.getBoundingClientRect();
+                img.replaceWith(box);
+                box.appendChild(img);
+                box.style.width = r.width + 'px';
+                box.style.height = r.height + 'px';
+                img.style.width = '100%';
+                img.style.height = '100%';
+                return box;
+            }
+            function setImageReplace(on) {
+                const targets = new Set();
+                document.querySelectorAll('.illustration, .badge .emoji, img').forEach(el => targets.add(el));
+                targets.forEach(el => {
+                    if (on) attachImageHandlers(el);
+                    else detachImageHandlers(el);
+                });
+            }
+            function attachImageHandlers(el) {
+                if (el._imgHandlers) return;
+                const input = document.createElement('input');
+                input.type = 'file'; input.accept = 'image/*'; input.style.display = 'none';
+                el.appendChild(input);
+                const onClick = (e) => { if (page.dataset.editing !== 'true') return; if (e.target === input) return; input.click(); };
+                const onChange = () => { const f = input.files[0]; if (!f) return; const r = new FileReader(); r.onload = () => applyImage(el, r.result); r.readAsDataURL(f); input.value = ''; };
+                const onDragOver = (e) => { if (page.dataset.editing !== 'true') return; if ([...e.dataTransfer.items].some(i => i.kind === 'file' && i.type.startsWith('image/'))) { e.preventDefault(); el.classList.add('drop-target'); } };
+                const onDragLeave = () => { el.classList.remove('drop-target'); };
+                const onDrop = (e) => { if (page.dataset.editing !== 'true') return; e.preventDefault(); const f = [...e.dataTransfer.files].find(x => x.type.startsWith('image/')); if (f) { const r = new FileReader(); r.onload = () => applyImage(el, r.result); r.readAsDataURL(f); } el.classList.remove('drop-target'); };
+                input.addEventListener('change', onChange);
+                el.addEventListener('click', onClick);
+                el.addEventListener('dragover', onDragOver);
+                el.addEventListener('dragleave', onDragLeave);
+                el.addEventListener('drop', onDrop);
+                el._imgHandlers = { input, onClick, onChange, onDragOver, onDragLeave, onDrop };
+            }
+            function detachImageHandlers(el) {
+                const h = el._imgHandlers; if (!h) return;
+                el.removeEventListener('click', h.onClick);
+                el.removeEventListener('dragover', h.onDragOver);
+                el.removeEventListener('dragleave', h.onDragLeave);
+                el.removeEventListener('drop', h.onDrop);
+                h.input.remove();
+                delete el._imgHandlers;
+            }
+            function applyImage(el, dataUrl) {
+                if (el.matches('img')) { el.src = dataUrl; return; }
+                if (el.classList.contains('emoji')) { el.innerHTML = ''; const img = document.createElement('img'); img.className = 'emoji-img'; img.src = dataUrl; el.appendChild(img); return; }
+                if (el.classList.contains('illustration')) { el.innerHTML = ''; const img = document.createElement('img'); img.src = dataUrl; el.appendChild(img); return; }
+            }
+            function setDeleteHandles(on) {
+                const targets = new Set();
+                document.querySelectorAll('.section, .item, .badge, .card, .illustration, .banner, [contenteditable="true"], .img-box').forEach(el => targets.add(el));
+                targets.forEach(el => { if (on) attachDelHandle(el); else detachDelHandle(el); });
+            }
+            function attachDelHandle(el) {
+                if (el._delHandle) return;
+                if (el === page || el.classList.contains('edit-toggle') || el.classList.contains('style-panel')) return;
+                const cs = getComputedStyle(el);
+                if (cs.position === 'static') el.style.position = 'relative';
+                const btn = document.createElement('button');
+                btn.className = 'del-handle'; btn.type = 'button'; btn.textContent = '×';
+                el.appendChild(btn);
+                const onClick = (e) => {
+                    e.stopPropagation();
+                    if (page.dataset.editing !== 'true') return;
+                    if (confirm('确定删除该元素吗？')) {
+                        const container = el;
+                        container.remove();
+                        if (activeEl === el || (activeEl && container.contains(activeEl))) activeEl = null;
+                    }
+                };
+                btn.addEventListener('click', onClick);
+                el._delHandle = { btn, onClick };
+            }
+            function detachDelHandle(el) {
+                const h = el._delHandle; if (!h) return;
+                h.btn.removeEventListener('click', h.onClick);
+                h.btn.remove();
+                delete el._delHandle;
+            }
+            function makeResizable(el) {
+                el.classList.add('resizable');
+                const cs = getComputedStyle(el);
+                if (cs.position === 'static') el.style.position = 'relative';
+                let handle = el.querySelector(':scope > .resize-handle');
+                if (!handle) {
+                    handle = document.createElement('div');
+                    handle.className = 'resize-handle';
+                    el.appendChild(handle);
+                }
+                let startX, startY, startW, startH;
+                const onDown = (e) => {
+                    if (page.dataset.editing !== 'true') return;
+                    e.preventDefault(); e.stopPropagation();
+                    const rect = el.getBoundingClientRect();
+                    startX = e.clientX; startY = e.clientY;
+                    startW = rect.width; startH = rect.height;
+                    page.dataset.resizing = 'true';
+                    document.addEventListener('mousemove', onMove);
+                    document.addEventListener('mouseup', onUp);
+                };
+                const onMove = (e) => {
+                    const dx = e.clientX - startX;
+                    const dy = e.clientY - startY;
+                    const minW = 60, minH = 32;
+                    if (el.closest('.grid') && el.classList.contains('badge')) {
+                        el.style.height = Math.max(minH, startH + dy) + 'px';
+                    } else {
+                        el.style.width = Math.max(minW, startW + dx) + 'px';
+                        el.style.height = Math.max(minH, startH + dy) + 'px';
+                    }
+                };
+                const onUp = () => {
+                    page.dataset.resizing = 'false';
+                    document.removeEventListener('mousemove', onMove);
+                    document.removeEventListener('mouseup', onUp);
+                };
+                handle.addEventListener('mousedown', onDown);
+                handle.addEventListener('dblclick', () => {
+                    if (el.closest('.grid') && el.classList.contains('badge')) {
+                        const now = el.style.gridColumn && el.style.gridColumn.includes('span 2');
+                        el.style.gridColumn = now ? 'span 1' : 'span 2';
+                    }
+                });
+                el._resizerCleanup = () => {
+                    handle.removeEventListener('mousedown', onDown);
+                    handle.remove();
+                    el.classList.remove('resizable');
+                };
+            }
+            function teardownResizable(el) {
+                if (el._resizerCleanup) el._resizerCleanup();
+            }
+            function saveState() {
+                localStorage.setItem(STORAGE_KEY, page.innerHTML);
+            }
+            function setEditing(on) {
+                editing = !!on;
+                page.dataset.editing = editing ? 'true' : 'false';
+                btn.setAttribute('aria-pressed', editing);
+                btn.textContent = editing ? '退出编辑' : '编辑模式';
+                setContentEditable(editing);
+                setDraggable(editing);
+                setResizable(editing);
+                setImageReplace(editing);
+                setDeleteHandles(editing);
+                if (stylePanel) stylePanel.style.display = editing ? 'flex' : 'none';
+                if (!editing) saveState();
+            }
+            btn.addEventListener('click', () => setEditing(!editing));
+        })();
+    </script>
+</body>
+
+</html>
